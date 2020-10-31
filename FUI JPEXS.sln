@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FUI Label Finder", "FUI Label Finder\FUI Label Finder.csproj", "{3431BA7F-B38D-41D8-8DB9-6CAEF6A2F75B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FUI_JPEXS", "FUI Label Finder\FUI_JPEXS.csproj", "{3431BA7F-B38D-41D8-8DB9-6CAEF6A2F75B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

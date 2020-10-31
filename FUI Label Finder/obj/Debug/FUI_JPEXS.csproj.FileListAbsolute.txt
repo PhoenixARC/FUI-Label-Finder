@@ -1,0 +1,12 @@
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\bin\Debug\FUI JPEXS.exe
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\bin\Debug\FUI JPEXS.pdb
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI_JPEXS.csprojAssemblyReference.cache
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI_Label_Finder.Form1.resources
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI_Label_Finder.Properties.Resources.resources
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI_JPEXS.csproj.GenerateResource.cache
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI_JPEXS.csproj.CoreCompileInputs.cache
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI JPEXS.exe
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI JPEXS.pdb
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\bin\Debug\ImageResizer.dll
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\bin\Debug\ImageResizer.xml
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI_JPEXS.csproj.CopyComplete

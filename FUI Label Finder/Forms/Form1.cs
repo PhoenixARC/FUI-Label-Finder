@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Drawing.Imaging;
 
 namespace FUI_Label_Finder
 {
@@ -63,10 +65,30 @@ namespace FUI_Label_Finder
                     string newdata = System.Text.Encoding.Default.GetString(HexStringToByteArray((axl.Replace("FF FF ", "").Replace(" ", ""))));
                     if (newdata.StartsWith("A") || newdata.StartsWith("B") || newdata.StartsWith("C") || newdata.StartsWith("D") || newdata.StartsWith("E") || newdata.StartsWith("F") || newdata.StartsWith("G") || newdata.StartsWith("H") || newdata.StartsWith("I") || newdata.StartsWith("J") || newdata.StartsWith("K") || newdata.StartsWith("L") || newdata.StartsWith("M") || newdata.StartsWith("N") || newdata.StartsWith("O") || newdata.StartsWith("P") || newdata.StartsWith("Q") || newdata.StartsWith("R") || newdata.StartsWith("S") || newdata.StartsWith("T") || newdata.StartsWith("U") || newdata.StartsWith("V") || newdata.StartsWith("W") || newdata.StartsWith("X") || newdata.StartsWith("Y") || newdata.StartsWith("Z") || newdata.StartsWith("a") || newdata.StartsWith("b") || newdata.StartsWith("c") || newdata.StartsWith("d") || newdata.StartsWith("e") || newdata.StartsWith("f") || newdata.StartsWith("g") || newdata.StartsWith("h") || newdata.StartsWith("i") || newdata.StartsWith("j") || newdata.StartsWith("k") || newdata.StartsWith("l") || newdata.StartsWith("m") || newdata.StartsWith("n") || newdata.StartsWith("o") || newdata.StartsWith("p") || newdata.StartsWith("q") || newdata.StartsWith("r") || newdata.StartsWith("s") || newdata.StartsWith("t") || newdata.StartsWith("u") || newdata.StartsWith("v") || newdata.StartsWith("w") || newdata.StartsWith("x") || newdata.StartsWith("y") || newdata.StartsWith("z"))
                     {
-                        TreeNode newdat = new TreeNode("Label" + t);
-                        newdat.Tag = newdata;
-                        labels.Nodes.Add(newdat);
-                        t++;
+                        if (newdata.Length >= 4)
+                        {
+                            //MessageBox.Show(newdata);
+                            TreeNode newdat = new TreeNode("Label" + t + ":" + newdata);
+                            newdat.Tag = newdata;
+                            labels.Nodes.Add(newdat);
+                            t++;
+                        }
+                    }
+                    //MessageBox.Show(System.Text.Encoding.Default.GetString(HexStringToByteArray((axl.Replace(" ","").Replace("FF FF ","")))));
+                }
+                if (axl.StartsWith("41 ") || axl.StartsWith("42 ") || axl.StartsWith("43 ") || axl.StartsWith("44 ") || axl.StartsWith("45 ") || axl.StartsWith("46 ") || axl.StartsWith("47 ") || axl.StartsWith("48 ") || axl.StartsWith("49 ") || axl.StartsWith("4A ") || axl.StartsWith("4B ") || axl.StartsWith("4C ") || axl.StartsWith("4D ") || axl.StartsWith("4E ") || axl.StartsWith("4F ") || axl.StartsWith("50 ") || axl.StartsWith("51 ") || axl.StartsWith("52 ") || axl.StartsWith("53 ") || axl.StartsWith("54 ") || axl.StartsWith("55 ") || axl.StartsWith("56 ") || axl.StartsWith("57 ") || axl.StartsWith("58 ") || axl.StartsWith("59 ") || axl.StartsWith("5A ") || axl.StartsWith("61 ") || axl.StartsWith("62 ") || axl.StartsWith("63 ") || axl.StartsWith("64 ") || axl.StartsWith("65 ") || axl.StartsWith("66 ") || axl.StartsWith("67 ") || axl.StartsWith("68 ") || axl.StartsWith("69 ") || axl.StartsWith("6A ") || axl.StartsWith("6B ") || axl.StartsWith("6C ") || axl.StartsWith("6D ") || axl.StartsWith("6E ") || axl.StartsWith("6F ") || axl.StartsWith("70 ") || axl.StartsWith("71 ") || axl.StartsWith("72 ") || axl.StartsWith("73 ") || axl.StartsWith("74 ") || axl.StartsWith("75 ") || axl.StartsWith("76 ") || axl.StartsWith("77 ") || axl.StartsWith("78 ") || axl.StartsWith("79 ") || axl.StartsWith("7A "))
+                {
+                    string newdata = System.Text.Encoding.Default.GetString(HexStringToByteArray((axl.Replace("FF FF ", "").Replace(" ", ""))));
+                    if (newdata.StartsWith("A") || newdata.StartsWith("B") || newdata.StartsWith("C") || newdata.StartsWith("D") || newdata.StartsWith("E") || newdata.StartsWith("F") || newdata.StartsWith("G") || newdata.StartsWith("H") || newdata.StartsWith("I") || newdata.StartsWith("J") || newdata.StartsWith("K") || newdata.StartsWith("L") || newdata.StartsWith("M") || newdata.StartsWith("N") || newdata.StartsWith("O") || newdata.StartsWith("P") || newdata.StartsWith("Q") || newdata.StartsWith("R") || newdata.StartsWith("S") || newdata.StartsWith("T") || newdata.StartsWith("U") || newdata.StartsWith("V") || newdata.StartsWith("W") || newdata.StartsWith("X") || newdata.StartsWith("Y") || newdata.StartsWith("Z") || newdata.StartsWith("a") || newdata.StartsWith("b") || newdata.StartsWith("c") || newdata.StartsWith("d") || newdata.StartsWith("e") || newdata.StartsWith("f") || newdata.StartsWith("g") || newdata.StartsWith("h") || newdata.StartsWith("i") || newdata.StartsWith("j") || newdata.StartsWith("k") || newdata.StartsWith("l") || newdata.StartsWith("m") || newdata.StartsWith("n") || newdata.StartsWith("o") || newdata.StartsWith("p") || newdata.StartsWith("q") || newdata.StartsWith("r") || newdata.StartsWith("s") || newdata.StartsWith("t") || newdata.StartsWith("u") || newdata.StartsWith("v") || newdata.StartsWith("w") || newdata.StartsWith("x") || newdata.StartsWith("y") || newdata.StartsWith("z"))
+                    {
+                        if (newdata.Length >= 4 && Regex.IsMatch(newdata, @"^[a-zA-Z0-9_.]+$") && !newdata.Contains(".swf"))
+                        {
+                            //MessageBox.Show(newdata);
+                            TreeNode newdat = new TreeNode("Label" + t + ":" + newdata);
+                            newdat.Tag = newdata;
+                            labels.Nodes.Add(newdat);
+                            t++;
+                        }
                     }
                     //MessageBox.Show(System.Text.Encoding.Default.GetString(HexStringToByteArray((axl.Replace(" ","").Replace("FF FF ","")))));
                 }
@@ -75,10 +97,18 @@ namespace FUI_Label_Finder
                     string newdata = System.Text.Encoding.Default.GetString(HexStringToByteArray((axl.Replace("FF FF ", "").Replace(" ", ""))));
                     if (newdata.Replace(".swf", ".fui") != shortfilenom && File.Exists(initDir + newdata.Replace(".swf", ".fui")))
                     {
-                        DialogResult dr = MessageBox.Show("Dependent on:" + newdata.Replace(".swf", ".fui") + "\nLoad File?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                        if(dr == DialogResult.Yes)
+
+                        if (checkBox1.Checked == true)
                         {
                             LoadFUI(initDir + newdata.Replace(".swf", ".fui"), newdata.Replace(".swf", ".fui"), initDir);
+                        }
+                        else
+                        {
+                            DialogResult dr = MessageBox.Show("Dependent on:" + newdata.Replace(".swf", ".fui") + "\nLoad File?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                            if(dr == DialogResult.Yes)
+                            {
+                                LoadFUI(initDir + newdata.Replace(".swf", ".fui"), newdata.Replace(".swf", ".fui"), initDir);
+                            }
                         }
                         
                     }
@@ -92,7 +122,7 @@ namespace FUI_Label_Finder
                 {
                     if (image.StartsWith("4E 47"))
                     {
-                        imglist.Add("89 50 4E 47 " + newstring(image) + " 49 45 4E 44 AE 42 60 82");
+                        imglist.Add("89 50 4E 47 " + newstring(image, "4E 47 ", " 49 45 4E 44 AE 42 60 82") + " 49 45 4E 44 AE 42 60 82");
                     }
                     foreach (string img in imglist)
                     {
@@ -115,11 +145,11 @@ namespace FUI_Label_Finder
 
         }
 
-        public string newstring(string St)
+        public string newstring(string St, string start, string end)
         {
             //MessageBox.Show(St);
-            int pFrom = St.IndexOf("4E 47 ") + "4E 47 ".Length;
-            int pTo = St.LastIndexOf(" 49 45 4E 44 AE 42 60 82");
+            int pFrom = St.IndexOf(start) + start.Length;
+            int pTo = St.LastIndexOf(end);
 
             String result = St.Substring(pFrom, pTo - pFrom);
             return result;
@@ -144,6 +174,15 @@ namespace FUI_Label_Finder
                 Stream stream = new MemoryStream(HexStringToByteArray(treeView1.SelectedNode.Tag.ToString().Replace(" ", "")));
                 Image currimg = Image.FromStream(stream);
                 pictureBox1.Image = currimg;
+                if (currimg.Width < pictureBox1.Width && currimg.Height < pictureBox1.Height)
+                {
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
+                }
+                else
+                {
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    
+                }
             }
         }
 
@@ -183,9 +222,12 @@ namespace FUI_Label_Finder
                             string labeltext = treeView1.SelectedNode.Tag.ToString();
                                 lb.WriteLabel(dir1, labeltext);
                         }
-                        else if (treeView1.SelectedNode.Text.StartsWith("Image"))
+                        else if (treeView1.SelectedNode.Text.StartsWith("Image") && treeView1.SelectedNode.Text != "Images")
                         {
 
+                            string dir3 = treeView1.SelectedNode.Parent.Parent.Tag.ToString().Replace(".fui", "_FUI") + "\\";
+                                Ib.WriteImage(dir3, HexStringToByteArray(treeView1.SelectedNode.Tag.ToString().Replace(" ", "")), int.Parse(treeView1.SelectedNode.Text.Replace("Image","")));
+                            
                         }
                         else
                         {
@@ -202,6 +244,37 @@ namespace FUI_Label_Finder
             {
 
             }
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Form1_DragDrop(object sender, DragEventArgs e)
+        {
+            treeView1.Nodes.Clear();
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files)
+            {
+                string file2 = file.Replace("\\", "/");
+                Console.WriteLine(file2);
+                //MessageBox.Show(file2);
+                //MessageBox.Show(file2.Replace("\\", "/").Split('/').Length.ToString());
+                string shortnom = file2.Replace("\\","/").Split('/')[file2.Split('/').Length - 1];
+                string IDir = file2.Replace(shortnom, "");
+                LoadFUI(file2, shortnom, IDir);
+            }
+        }
+
+        private void treeView1_DragEnter(object sender, DragEventArgs e)
+        {
+
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

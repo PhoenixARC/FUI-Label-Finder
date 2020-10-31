@@ -1,0 +1,9 @@
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\bin\Debug\FUI Label Finder.exe
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\bin\Debug\FUI Label Finder.pdb
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI Label Finder.csprojAssemblyReference.cache
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI_Label_Finder.Form1.resources
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI_Label_Finder.Properties.Resources.resources
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI Label Finder.csproj.GenerateResource.cache
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI Label Finder.csproj.CoreCompileInputs.cache
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI Label Finder.exe
+C:\Users\phoen\source\repos\FUI Label Finder\FUI Label Finder\obj\Debug\FUI Label Finder.pdb

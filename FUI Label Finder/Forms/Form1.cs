@@ -277,5 +277,11 @@ namespace FUI_Label_Finder
         {
 
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.About ab = new Forms.About();
+            ab.Show();
+        }
     }
 }

@@ -102,9 +102,6 @@
     <None Include="Resources\Mojangles.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\image0.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\favicon %286%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

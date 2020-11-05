@@ -58,8 +58,11 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\FuiUtils.cs" />
     <Compile Include="Handlers\ImageHandler.cs" />
     <Compile Include="Handlers\LabelHandler.cs" />
+    <Compile Include="Handlers\StringOperations.cs" />
+    <Compile Include="Handlers\TreeHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\About.en-US.resx">

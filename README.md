@@ -1,12 +1,12 @@
 # FUI-Label-Finder
 Minecraft .fui tool
-So starting out, the FUI always contains this as it's 'magic', with a varying value in the middle, in this case it's `6B 34`:\n
-```01 49 55 46 00 00 00 00 6B 34 00 00```\n
-or in plaintext:\n
-```.IUF....k4..```\n
-following this is always the original filename, usually the same filename with .swf in place of .fui;\n
-```01 49 55 46 00 00 00 00 6B 34 00 00 41 6E 76 69 6C 4D 65 6E 75 37 32 30 2E 73 77 66```\n
-```.IUF....k4..AnvilMenu720.swf```\n
+So starting out, the FUI always contains this as it's 'magic', with a varying value in the middle, in this case it's `6B 34`:<br />
+```01 49 55 46 00 00 00 00 6B 34 00 00```<br />
+or in plaintext:<br />
+```.IUF....k4..```<br />
+following this is always the original filename, usually the same filename with .swf in place of .fui;<br />
+```01 49 55 46 00 00 00 00 6B 34 00 00 41 6E 76 69 6C 4D 65 6E 75 37 32 30 2E 73 77 66```<br />
+```.IUF....k4..AnvilMenu720.swf```<br />
 Then, at exactly `0x00000050` is what appears to be the start of another segment, which is unclear as to their purpose;
 ```0E 00 00 00 15 00 00 00 00 00 00 00 00 00 00 00```
 At the end of every FUI is where References and uncompressed images are held, which appear in `.png` format and always start with the magic:
